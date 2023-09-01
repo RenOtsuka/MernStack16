@@ -2,6 +2,11 @@ const express = require('express');
 let fsModule = require("fs");
 const app = express();
 
+//2.
+app.get("/getInfo", (req, res) => {
+  res.send("This is a get request");
+});
+
 
 
 //7.
@@ -40,5 +45,5 @@ app.get('/getVaccineByID/:id', function (req, res) {
 
 
 
-
+//listens to port 9000
 app.listen(9000);
