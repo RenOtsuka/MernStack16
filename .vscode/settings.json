@@ -1,0 +1,12 @@
+{
+  "workbench.colorCustomizations": {
+    
+  },
+
+  "editor.tokenColorCustomizations": {
+    "variables": "#33a2c1",
+    "functions": "#18882f",
+    "types": "#32ba58"
+ }
+
+}
