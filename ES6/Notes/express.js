@@ -52,3 +52,6 @@
 
 // to run api
 // npm start
+
+//to make build to be run
+// npm run build (minimized)
