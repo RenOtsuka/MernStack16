@@ -1,6 +1,7 @@
 let path = require("path"), //path module of node framework
 HtmlWebpackPlugin = require('html-webpack-plugin'),
 
+//api/params
 config = {
     output: {
         path: path.join(__dirname, '/dist'), //dist - distribution
@@ -8,17 +9,17 @@ config = {
     },
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
-        port: 9090,
-        historyApiFallback : true //localhost:9092/user
+        port: 9090, //picks what port number to use for webpack to listen (default 9090)
+        historyApiFallback : true  //acts as a wildcard to catch any other endpoints       //localhost:9092/user
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser 
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx)$/, //checks files with .js/.jsx extension in /src
                 exclude: /nodeModules/,
                 use: {
-                  loader: 'babel-loader'
+                  loader: 'babel-loader' //uses config from .babelrc
                 }
             },
             {
@@ -31,7 +32,7 @@ config = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })]
+    plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })] //loads the html
 }
 
 module.exports = config;
