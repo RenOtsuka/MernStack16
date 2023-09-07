@@ -5,7 +5,7 @@ HtmlWebpackPlugin = require('html-webpack-plugin'),
 config = {
     output: {
         path: path.join(__dirname, '/dist'), //dist - distribution
-        filename: 'index.bundle.js'
+        filename: 'index.bundle.js' //bundled file of app
     },
     // webpack 5 comes with devServer which loads in development mode
     devServer: {

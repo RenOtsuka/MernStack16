@@ -35,7 +35,7 @@ let val2 = true;val2?console.log("true"):console.log("false");
 //while in dev, if we have a change in some file so it caches the prev values but reloads the updated values on browser
 
 //f. uses babel config. to do tranpilation
-//async/await => ES8 : firefox doesn't 
+//async/await => ES8 : firefox doesn't have
 
 //babel will read ES6/8 code and convert it in ES5 equivalent or add wrappers for browsers
 
