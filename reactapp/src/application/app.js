@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./CommonComponent/HeaderComponent";
+import MyComp from "./CommonComponent/ryanComponent";
 
 export default class Application extends Component{
 
@@ -9,13 +10,16 @@ export default class Application extends Component{
 
   //changes here hot loads the content w/o reloading the server
   render(){
-    let name = "Ryan"
+    let name = "Bob"
     //JSX - code, html+JS creating a virtual dom
     return(
       <>
         <Header/>
-        <h1> My First React Applicaion Page</h1>
+        <h1> My First React Application Page</h1>
         <h2>Hello React {name}</h2>
+        <br/>
+        <MyComp/>
+      
       </>
     );
   }
