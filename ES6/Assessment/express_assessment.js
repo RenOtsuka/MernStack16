@@ -51,18 +51,14 @@
 
 The purpose of a RESTful API is to provide a standardized way for different software components, systems, or applications to communicate over the internet using the principles of Representational State Transfer (REST).
 
-
 Specifications to Make a Service RESTful:
 To make a service RESTful, we must use these specifications:
 
 Client-Server Architecture: Separate the client (user interface) and server (data storage and processing) components, allowing them to evolve independently.
 
-
 Statelessness: Each client request must contain all the information needed for the server to understand and fulfill the request.
 
-
 Cacheability: Responses can be cached to improve performance and reduce server load. Clients and intermediaries can cache responses and use them for subsequent requests.
-
 
 Uniform Interface:
 Resource Identification: Resources (data) are identified using URIs (Uniform Resource Identifiers).
@@ -73,11 +69,9 @@ Layered System: Components (servers, proxies, gateways, etc.) can be added betwe
   
 */
 
-
 //7. Create an example of Application mounting using vaccination API's
 
 //see server.js
-
 
 
 //8. Create an API to demonstrate route param usage like - getVaccineByID 
