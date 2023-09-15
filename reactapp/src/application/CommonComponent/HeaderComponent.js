@@ -19,8 +19,6 @@ let Header = (props) => {
     // <>
     //   <h1>Header Component</h1>
     //   <h2>Info to be shared</h2>
-    //   <NavLink></NavLink>
-    //   <NavLink></NavLink>
     // </>
 
     <>
