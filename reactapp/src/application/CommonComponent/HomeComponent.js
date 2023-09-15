@@ -64,6 +64,15 @@ export default class HomeComponent extends Component{
     evt.preventDefault();
   }
 
+  //destruction life cycle method
+  componentWillUnmount(){
+    //delete all subscriptions from the component
+    //stop any api call
+    console.log("Component Will Unmount!!!")
+
+    clearInterval(this.counterInterval);
+  };
+
 
 
   render(){

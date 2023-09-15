@@ -1,6 +1,6 @@
 import React from "react";
 
-let MyComp = (props) => {
+let RyanComp = (props) => {
   let childAge = 25;
   
   return(
@@ -13,4 +13,4 @@ let MyComp = (props) => {
 
 };
 
-export default MyComp;
+export default RyanComp;
