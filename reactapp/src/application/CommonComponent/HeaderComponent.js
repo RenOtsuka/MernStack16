@@ -12,7 +12,7 @@ let Header = (props) => {
     goAboutHook("/about/2023")
 
     evt.preventDefault();
-}
+  }
 
   
   return(

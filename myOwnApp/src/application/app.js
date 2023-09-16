@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RyanComp from "./Components/ryanComponent";
+import MyComp from "./Components/MyComp";
 
 /* 
 Tasks:
@@ -17,20 +18,20 @@ export default class Application extends Component{
     //1.
     this.state = {
       headerValue: "My First React App. Page",
-      age: 10,
-      name: "ryan"
+      age: 10
     }
 
-    this.nameRef = React.createRef();
-    this.ageRef = React.createRef();
   }
 
   //1.
-  changeText = () => {
+  changeText = (evt) => {
     this.setState({
       headerValue: "New Title MERN Stack"
     });
+
+    evt.preventDefault();
   };
+
 
   //2.
   getFromChild = (childInfo) => {
@@ -39,7 +40,9 @@ export default class Application extends Component{
     });
   };
 
-  //4.
+
+
+//4.
   formSubmit = (evt) => {
     evt.preventDefault();
 
@@ -53,26 +56,8 @@ export default class Application extends Component{
 
   };
 
-  //3.
-  changeInput = (evt) => {
-    let value = evt.target.value;
-    let classList = target.classList;
-
-    if(classList.contains("name")){
-      this.setState({
-        name: value
-      });
-    }
-    else{
-      this.setState({
-        age: value
-       });
-    }
-
-  };
-
-
   render(){
+    let name = "Van Duc Phan";
     return(
       <>
         
@@ -80,18 +65,12 @@ export default class Application extends Component{
         <button onClick={this.changeText}>Change Text</button>
         <h2>Hello React, I am {this.state.age} years old</h2>
 
+        <MyComp/>
         <br/>
-        <RyanComp name={this.state.name} callbk={this.getFromChild}/>
+        <RyanComp name={name} callbk={this.getFromChild}/>
         <br/>
 
-        <form onSubmit={this.formSubmit}>
-          <label>Name:</label>
-          <input type="text" className="name" ref={this.nameRef} onChange={this.changeInput}></input>
-          <br/>
-          <label>Age:</label>
-          <input type="number" className="age" ref={this.ageRef} onChange={this.changeInput}></input>
-          <button type="submit">Submit</button>
-        </form>
+  
       </>
     );
   }
