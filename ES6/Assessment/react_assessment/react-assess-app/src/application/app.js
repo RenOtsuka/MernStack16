@@ -18,9 +18,8 @@ export default class Application extends Component {
           <Routes>
             <Route path="/success" element={<Success/>}/>
             <Route path="/signIn" element={ <UserSignIn/>}/>
-            <Route path="/product" element={<Product/>}>
-              <Route path="/product/:name/:price" element={<Product/>}/>
-            </Route>
+            <Route path="/product" element={<Product/>}/>
+            <Route path="/product/:name/:price" element={<Product/>}/>
           </Routes>
         </Router>
      </>

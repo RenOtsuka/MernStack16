@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-let Product = () => {
+let Product = (props) => {
 
   let params =  useParams();
   let name = params["name"] ? params["name"] : "N/A";
