@@ -3,18 +3,18 @@ import { useParams } from "react-router-dom";
 
 let Product = () => {
 
-  let params = useParams();
+  let params =  useParams();
+  let name = params["name"] ? params["name"] : "N/A";
+  let price = params["price"] ? params["price"] : "N/A";
 
-  let ProductName = params["productName"] ? params["productName"]: "";
-  let ProductPrice = params["productPrice"] ? params["productPrice"]: "";
+  // console.log(name, price);
 
   return(
-    <>  
-      <h3>Product Component</h3>
-      <div>
-        <p>Product Name: {ProductName}</p>
-        <p>Product Price: {ProductPrice}</p>
-      </div>
+    <> 
+    <br></br>
+        <h3>Product Component</h3>
+        <p>Product Name: {name}</p>
+        <p>Product Price: {price}</p>
     </>
   );
 };

@@ -8,7 +8,7 @@ let SuccessChild = (props) => {
       <h3>Success Child Component</h3>
       <p>Name: {props.name}</p>
       <p>Address: {props.address}</p>
-      {props.element}
+      <>{props.elementComp}</>
     </>
   );
 }
