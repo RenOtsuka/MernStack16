@@ -22,7 +22,7 @@
 //and if it detects any changes, react will only change that part and reflect it to the real DOM
 
 
-
+//see react-assess-app file
 //5. create a class component named - Success and show some quotes on success in it
 //6. create a functional component SuccessChild, make it child of Success and pass Name and Address to it from Success
 //7. create SuccessStory as another component, pass this as props in SuccessChild from Success component
