@@ -2,7 +2,7 @@ import React from "react";
 
 let SuccessStory = (props) => {
 
-  let age = 20;
+  // let age = 20;
   return(
     <>
       <br></br>
