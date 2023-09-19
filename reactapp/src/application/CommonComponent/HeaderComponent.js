@@ -9,7 +9,7 @@ let Header = (props) => {
 
   let goToAboutClick = (evt)=>{
         
-    goAboutHook("/about/2023")
+    goAboutHook("/about/2023") // navigates user to certain link on the fly
 
     evt.preventDefault();
   }
@@ -26,10 +26,12 @@ let Header = (props) => {
       {userName == "" ?<b> Please Login to see other features</b>:""}
         
       <div>
-      <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink>
-      <NavLink to="/about" className="button" activeclassname="success" >About </NavLink>
-      <NavLink to="/user" className="button" activeclassname="success" >User </NavLink>
+        <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink>
+        <NavLink to="/about" className="button" activeclassname="success" >About </NavLink>
+        <NavLink to="/user" className="button" activeclassname="success" >User </NavLink>
       </div>
+      <a href="/user" className="button">User Anchor</a>
+     
       <button onClick={goToAboutClick} >Go To About Page</button>
     </>
   );
