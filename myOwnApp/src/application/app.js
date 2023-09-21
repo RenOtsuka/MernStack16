@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import RyanComp from "./Components/ryanComponent";
-import MyComp from "./Components/MyComp";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import MyComp from "./Components/MyComponent";
+import FormComp from "./Components/FormComp";
 
 /* 
 Tasks:
@@ -8,6 +9,13 @@ Tasks:
 //2. props sharing information between components
 //3. event binding
 //4. controlled and uncontrolled way of writing components
+*/
+
+
+/* 
+1. Create a component of your name and a component with name of your city
+2. Add them to route - name and city, in city also create a route using route param and pass the value of zip code
+3. Create a component with name lifeCycle and implement all life cycle methods we did so far
 */
 
 export default class Application extends Component{
@@ -25,11 +33,13 @@ export default class Application extends Component{
 
   //1.
   changeText = (evt) => {
+    console.log(evt);
+
     this.setState({
       headerValue: "New Title MERN Stack"
     });
 
-    evt.preventDefault();
+     evt.preventDefault();
   };
 
 
@@ -42,22 +52,8 @@ export default class Application extends Component{
 
 
 
-//4.
-  formSubmit = (evt) => {
-    evt.preventDefault();
-
-    let nameValue = this.nameRef.current.value;
-    let ageValue = this.ageRef.current.value;
-
-    this.setState({
-      age: ageValue,
-      name: nameValue
-    });
-
-  };
-
   render(){
-    let name = "Van Duc Phan";
+    let name = "Ryan";
     return(
       <>
         
@@ -65,12 +61,10 @@ export default class Application extends Component{
         <button onClick={this.changeText}>Change Text</button>
         <h2>Hello React, I am {this.state.age} years old</h2>
 
-        <MyComp/>
+        <FormComp/>
         <br/>
-        <RyanComp name={name} callbk={this.getFromChild}/>
+        <MyComp name={name} callbk={this.getFromChild}/>
         <br/>
-
-  
       </>
     );
   }
