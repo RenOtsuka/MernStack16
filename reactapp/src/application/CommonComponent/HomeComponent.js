@@ -32,9 +32,9 @@ export default class HomeComponent extends PureComponent {
         this.userNameRef.current.value = "Initial user name"
         this.userAddressRef.current.value = "Initial user address"
 
-        setTimeout(() => {
-            this.userNameRef.current.focus()
-        }, 3000);
+        // setTimeout(() => {
+        //     this.userNameRef.current.focus()
+        // }, 3000);
     }
 
     //update life cycle method - decides whether re-render should happen or not
@@ -42,12 +42,12 @@ export default class HomeComponent extends PureComponent {
     //     console.log(nextProps, nextState)
 
     //     if (nextState.uName=== this.state.uName && nextState.uState === this.state.uState) {
-    //         return false; //no need to call render method as states are same
+    //         return false //no need to call render method as states are same
     //     } else {
-    //         return true;
+    //         return true
     //     }
 
-    //     //return true;
+    //     //return true
     // }
 
     getSnapshotBeforeUpdate(prevState, prevProps){
@@ -57,7 +57,7 @@ export default class HomeComponent extends PureComponent {
         return {
             prevState,
             prevProps
-        };
+        }
     }
 
     componentDidUpdate(prevState, prevProps){
@@ -125,7 +125,6 @@ export default class HomeComponent extends PureComponent {
         }, 2000);
     }
 
-
     //destruction life cycle method
     componentWillUnmount(){
         //delete all subscriptions from the component
@@ -134,7 +133,6 @@ export default class HomeComponent extends PureComponent {
 
         clearInterval(this.counterInterval)
     }
-
 
     //creation and update life cycle method
     render(){

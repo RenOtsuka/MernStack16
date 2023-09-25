@@ -10,6 +10,11 @@ config = {
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
         port: 9090, //picks what port number to use for webpack to listen (default 9090)
+        // proxy: {
+        //     '/about/*': 'http://localhost:9000',
+        //   },
+        // open: {
+        //     target: ['index.html']},
         historyApiFallback : true  //acts as a wildcard to catch any other endpoints       //localhost:9092/user
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser 
