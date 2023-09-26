@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";//require react UI and mapstateToProps and mapDispatchToProps
-// import { AddUserToStore } from "../../../state/User/UserAction";
+
+//import { connect } from "react-redux";//require react UI and mapstateToProps and mapDispatchToProps
+//import { AddUserToStore } from "../../../state/User/UserAction";
  
 export default class User extends Component{
-// class User extends Component{
+//class User extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -41,7 +42,8 @@ export default class User extends Component{
 
     loginUser = (evt)=>{
 
-        this.props.AddUser(this.state)
+        //this.props.AddUser(this.state)
+        this.props.SignIn(this.state)
         evt.preventDefault()
     }
 
@@ -87,21 +89,24 @@ export default class User extends Component{
     }
 }
 
+//a fallback to use
 User.defaultProps = {
-    userName : "Sohail",
-    password : "18",
-    street : "Earth",
-    mobile : 654654
+    User : {
+        userName : "Sohail Default",
+        password : 18,
+        street : "Somewhere on earth",
+        mobile : 6565656
+    }
 }
 
-//subsciber
+// //subsciber
 // let mapstateToProps = (store)=>{
 //     return {
 //         User : store.userReducer.User //can be accessed as props.User
 //     }
 // }
 
-//publisher
+// //publisher
 // let mapdispatchToProps = (dispatch)=>{
 //     return {
 //         AddUser : (newUser)=>{ //can be accessed as props.AddUser
@@ -112,7 +117,7 @@ User.defaultProps = {
 
 
 //connect component with store to make it access the state as props defined in mapStateToProps
-// export default connect(mapstateToProps, null)(User) //to just make subscriber of state
+//export default connect(mapstateToProps, null)(User) //to just make subscriber of state
 
 //now component becomes subscirber as well as publisher
-// export default connect(mapstateToProps, mapdispatchToProps)(User)
+//export default connect(mapstateToProps, mapdispatchToProps)(User)
