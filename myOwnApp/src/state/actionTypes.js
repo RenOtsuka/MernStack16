@@ -1,0 +1,1 @@
+export const AddUser2ToStore = "USER.ADDUSER2TOSTORE";
