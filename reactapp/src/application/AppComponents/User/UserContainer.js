@@ -1,5 +1,5 @@
 //This will be used to create a link between react and redux stuff and make common functions reuse
-import UserComponent from "./UserComponent";
+import UserComponent from "./UserComponent.jsx";
 import { connect } from "react-redux";
 import { AddUserToStore, saveUserToDb } from "../../../state/User/UserAction";
 
