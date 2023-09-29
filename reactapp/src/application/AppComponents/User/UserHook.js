@@ -1,5 +1,5 @@
 //Hook - an extract of feature that we could get from library
-import React,  { useState, useRef, useEffect } from "react";
+import React,  {useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { AddUserToStore, saveUserToDb } from "../../../state/User/UserAction";
@@ -11,14 +11,17 @@ let UserHook = (props)=>{
 //this.setState({}) //callback to update the state and create v-dom
 
 //initializes one state and returns a callback to update that state
-// let [userName, setUserName] = useState("John Doe")
-// let onTextChange = (evt)=>{
-//     let target = evt.target;
-//     setUserName(target.value)
-// }
+let [userName2, setUserName2] = useState("John Doe");
+let [userAge, setuserAge] = useState(18);
+
+let onTextChange = (evt)=>{
+    let target = evt.target;
+    setUserName2(target.value)
+}
 
 //makes our component capable of being subscriber to store like mapStateToProps
 let user = useSelector((state)=>state.userReducer.User)
+//let user = useSelector((store)=>store.userReducer.User)
 
 //useDispatch - replacement of mapDispatchToProps makes component able to dispatch the action
 let dispatchToDB = useDispatch();
@@ -30,18 +33,36 @@ let passwordRef = useRef(null);
 let streetRef = useRef(null);
 let mobileRef = useRef(null);
 
-//componentDidMount
+//componentDidMount, shouldComponentUpdate
+//default is shouldComponentUpdate
 //when first rendering is done and UI can be accessed - componentDidMount
-//useeffect is the hook that we use to make it work as componentDidMount, componentWillUnmount
+//useeffect is the hook that we use to make it work as shouldComponentUpdate, componentDidMount, componentWillUnmount
 useEffect(()=>{
+
+    console.log("Re-render happened")
     //assign the values we got from reducer
     userNameRef.current.value = user.userName //"David" 
     passwordRef.current.value = user.password
     streetRef.current.value = user.street
     mobileRef.current.value = user.mobile   
-})
+
+
+     // clearInterval(interval);
+    //if we return a func. in useEffect - this acts as componentWillUnmount
+    return () => {
+        // clearInterval(interval);
+        console.log("Hook instance gets cleared componentWillUnmount")
+    }
+
+},[userAge]); //if we pass value in 2nd param, it init and behaves as - componentDidMount
+
+// let interval = setInterval(() => {
+//     console.log(userAge)
+//     setuserAge(userAge++);
+// }, 2000);
 
 let readFormData = (evt)=>{
+
     let user = {
         userName : userNameRef.current.value,
         password : passwordRef.current.value,
@@ -62,10 +83,6 @@ return(
         <form className={"form col-md-10 userHook"} onSubmit={readFormData}>                
             <label>
                 <b>User Name :</b>
-                {/* <input type="text" className={"form-control col-md-12"} value={userName} 
-                    onChange={(evt)=>{setUserName(evt.target.value)}}
-                    //onChange={onTextChange}
-                    placeholder="Please enter user name" maxLength={20} required/> */}
                     <input type="text" className={"form-control col-md-12"} ref={userNameRef}
                     placeholder="Please enter user name" maxLength={20} required/>
             </label>
@@ -89,6 +106,19 @@ return(
                 </label>
             <br/>
                 <input type="submit" className={"btn btn-primary"} value="Signin" />
+            <br/>    
+
+                {/* controlled way */}
+                <label> 
+                    <b>User Name:</b>
+                    <input type="text" className={"form-control col-md-12"} value={userName2} 
+                    onChange={(evt)=>{setUserName2(evt.target.value)}}
+                    //onChange={onTextChange}
+                    placeholder="Please enter user name" maxLength={20} required/>
+                </label>
+               <label>
+                    <b>Age is - {userAge}</b>
+               </label>
         </form>
     </>
 )

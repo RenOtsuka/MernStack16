@@ -2,6 +2,7 @@
 //get schema object created and also develop data model to be used in api
 //set validations and data types in schema
 //although mongodb is schema less but with mongoose we can create schema to start with
+
 let mongooseObj = require("mongoose");
 schemaObj = mongooseObj.Schema; //using the schema class from mongoose
 
@@ -9,7 +10,7 @@ schemaObj = mongooseObj.Schema; //using the schema class from mongoose
 mongooseObj.connect("mongodb://127.0.0.1/mernstack16"); 
 
 let userSchema = new schemaObj({
-    userName : {type: String, required : true},
+    userName : {type: String, required : true}, //has validation
     password: {type:String, required : true},
     street: String,
     mobile: Number

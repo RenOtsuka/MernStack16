@@ -17,7 +17,7 @@ export const saveUserToDb = (user)=>{
         console.log("called by dispatch and synced by thunk");
         //dispatch(loading(true)); //Jquery - ajax
         axios.post("http://localhost:9000/user/api/signinup",//uri or end point of singninup api
-                user
+                user //passing into the body (req.body)
             )
             .then((savedUser)=>{
                 let signdUser = savedUser.data;
