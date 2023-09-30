@@ -159,7 +159,6 @@ export default class HomeComponent extends PureComponent {
                     <input type="text" ref={this.userNameRef} ></input>
                     <b>Address</b>
                     <input type="text" ref={this.userAddressRef} ></input>
-
                     <button type="submit" >Save</button>
                 </form>
             </>
