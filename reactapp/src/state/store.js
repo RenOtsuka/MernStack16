@@ -12,12 +12,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import thunk from "redux-thunk"; //is used to pipeline the dispatched objects and give us a feeling of sync execution by being async
 
 import userReducer from "./User/UserReducer";
-//import productReducer from "./Product/ProductReducer";
+import productReducer from "./Product/ProductReducer";
+import cartReducer from "./Cart/CartReducer";
 
 //combine reducer is used to combine all the reducers we need in our store/state
 const rootReducer = combineReducers({
     userReducer,//userReducer : userReducer //- using short hand
-    //productReducer
+    productReducer,
+    cartReducer
 })
 
 //create configure and export the store from this code

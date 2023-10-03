@@ -388,7 +388,7 @@ optgroup {
   background-color: #046dc9;
   padding: 5px;  
   text-align: left;
-  color: #151311;
+  color: #e9244f;
   /* border-radius: 50%; */
 }
 .loadimage ul{
@@ -399,7 +399,7 @@ optgroup {
   cursor : pointer;
 }
 .loadimage ul li:hover{
-  color: #e97324; 
+  color: #5f1216; 
 }
 
 .loadimage .feature{

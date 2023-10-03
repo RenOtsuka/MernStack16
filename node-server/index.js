@@ -6,7 +6,10 @@ const cors = require('cors');
 const userRoute = require("./router/user_route")
 const userApp = express();
 
-console.log("We are in server.js")
+const productRoute = require("./router/product_route")
+const productApp = express();
+
+console.log("We are in index.js")
 
 app.use(cors());//middleware to expose api for other users as public
 //setting up the middleware static to handle all the static files we need to serve to client
@@ -17,10 +20,12 @@ app.use('/static', express.static('public')) //localhost:9000/static/alert.js
 app.use(express.json({limit:'2mb', extended:false})); 
 
 //redirect all request with /admin path to userApp
-app.use('/user',userRoute)
-
+app.use('/user',userApp)
 //mounted admin app
 userApp.use('/',userRoute)
+
+app.use('/product',productApp)
+productApp.use('/', productRoute)
 
 //wild card operator / default api
 app.get('*',(req, res)=>{
@@ -32,7 +37,6 @@ console.log("We are listening at 9000")
 app.listen(9000) //localhost:9000
 
 //nodemon - node monitoring module, which listens to change and restarts api when needed
-
 
 //HTTP Standard Status Codes
 
