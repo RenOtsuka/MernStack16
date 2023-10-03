@@ -1,6 +1,6 @@
 let express = require("express");
 let ProductRoute = express.Router();
-const ProductDataModel = require("../data-model/productdatamodel");
+const ProductDataModel = require("../data-model/productDataModel");
 
 
 //localhost:9000/product/api/addProduct
