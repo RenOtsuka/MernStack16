@@ -8,7 +8,7 @@ let ProductSchema = new schemaObj({
     price: {type:Number},
     desc: {type:String},
     rating: {type:String},
-    qty: {type: Number, default:1}
+    qty: {type: Number, default:1} //set default value of qty to 1 if none provided
     },
     {
         versionKey: false //false - set to false then it wont create in mongodb
@@ -16,4 +16,4 @@ let ProductSchema = new schemaObj({
 
 let ProductModel = mongooseObj.model("product",ProductSchema);
 module.exports = ProductModel;
-//note: donot put versionkey to true or it will start throwing error
+//note: do not put versionkey to true or it will start throwing error

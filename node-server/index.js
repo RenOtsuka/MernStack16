@@ -9,7 +9,10 @@ const userApp = express();
 const productRoute = require("./router/product_route")
 const productApp = express();
 
-console.log("We are in index.js")
+const cartRoute = require("./router/cart_route")
+const cartApp = express();
+
+console.log("We are in server.js")
 
 app.use(cors());//middleware to expose api for other users as public
 //setting up the middleware static to handle all the static files we need to serve to client
@@ -27,6 +30,9 @@ userApp.use('/',userRoute)
 app.use('/product',productApp)
 productApp.use('/', productRoute)
 
+app.use('/cart',cartApp)
+cartApp.use('/', cartRoute)
+
 //wild card operator / default api
 app.get('*',(req, res)=>{
   res.send('<h2>API you"re looking for is not ready yet!!! <h2>')
@@ -36,7 +42,10 @@ console.log("We are listening at 9000")
 //open the port for api to start listening the request/web-request
 app.listen(9000) //localhost:9000
 
+
+
 //nodemon - node monitoring module, which listens to change and restarts api when needed
+
 
 //HTTP Standard Status Codes
 

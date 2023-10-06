@@ -10,7 +10,7 @@ router.post('/api/saveproduct',(req, res)=>{
         
     productDataObject.save()
         .then((newProductData)=>{       
-                res.send(newProductData); //if product successfully saved we will get the mongodb unique _id
+                res.send(newProductData); //if product successfully saved we will get the mongo db unique _id
         })
         .catch((err)=>{
                 console.log("err ", err)
