@@ -19,7 +19,6 @@ let ProductComponent = (props) => {
         if (classs.contains("name")) {
             setName(evt.target.value)
         }
-
         evt.preventDefault();
     }
 
