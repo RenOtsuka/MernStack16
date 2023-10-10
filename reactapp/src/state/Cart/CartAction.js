@@ -51,6 +51,7 @@ export const saveCartToDb = (cart, userid)=>{
 
 export const getUserCart = (userid) => {
         
+    //using post req to not expose the id in the url (security)
     return function(dispatch) {
         console.log("Get List Of items");
         window.fetch("http://localhost:9000/cart/api/getUserCart",{
@@ -59,7 +60,7 @@ export const getUserCart = (userid) => {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({userid:userid})})
+            body: JSON.stringify({userid})})
         .then (response => response.json())
         .then (usercartresponse => {
             console.log("response - get user cart ", usercartresponse);

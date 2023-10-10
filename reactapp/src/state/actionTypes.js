@@ -2,6 +2,8 @@
 
 export const AddUserToStore = "USER.ADDUSERTOSTORE";
 
+export const AddHobbyToStore  = "HOBBY.ADDHOBBYTOSTORE";
+
 //Product Action Types
 export const ADD_PRODUCTS_TOSTORE = "PRODUCT.ADD_PRODUCTS_TOSTORE";
 export const FETCH_PRODUCTS_FULFILLED = "PRODUCT.FETCH_PRODUCTS_FULFILLED";

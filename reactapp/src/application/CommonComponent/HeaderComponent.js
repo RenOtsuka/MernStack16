@@ -22,9 +22,11 @@ let Header = (props)=>{
             <div>
                 <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink>
                 {/* <NavLink to="/user" className="button" activeclassname="success" >User </NavLink> */}
-                  <NavLink to="/hook" className="button" activeclassname="success" >User</NavLink>
+                <NavLink to="/hook" className="button" activeclassname="success" >User</NavLink>
+                <NavLink to="/hobbies" className="button" activeclassname="success" >Hobbies</NavLink>
                 <NavLink to="/product" className="button" activeclassname="success" >Product </NavLink>
                 <NavLink to="/cart" className="button" activeclassname="success" >Cart </NavLink>
+                <NavLink to="/coupon" className="button" activeclassname="success" >Coupon Page </NavLink>
                 <NavLink to="/about" className="button" activeclassname="success" >About </NavLink>
             </div>
 

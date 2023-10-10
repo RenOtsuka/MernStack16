@@ -18,7 +18,7 @@ let DisplayProduct = (props) => {
       {
         products && products.length >= 1 ?
           products.map((product) => {
-            return <ProductItemComponent product={product} />
+            return <ProductItemComponent product={product} key={product._id}/>
           })
 
           : <h2>No Products To Show</h2>
