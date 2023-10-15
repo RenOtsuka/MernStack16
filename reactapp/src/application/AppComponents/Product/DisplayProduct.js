@@ -11,7 +11,7 @@ let DisplayProduct = (props) => {
 
   useEffect(() => {
     products && products.length == 0 ? dispatchToFetchProducts(fetchProducts()) : ""
-  }, []);
+  }, []); //exec. for one time and init array to empty
 
   return (
     <>

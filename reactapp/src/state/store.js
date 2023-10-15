@@ -15,13 +15,15 @@ import userReducer from "./User/UserReducer";
 import productReducer from "./Product/ProductReducer";
 import cartReducer from "./Cart/CartReducer";
 import hobbyReducer from "./Hobby/HobbyReducer";
+import couponReducer from "./Coupon/CouponReducer";
 
 //combine reducer is used to combine all the reducers we need in our store/state
 const rootReducer = combineReducers({
     userReducer,//userReducer : userReducer //- using short hand
     productReducer,
     cartReducer,
-    hobbyReducer
+    hobbyReducer,
+    couponReducer
 })
 
 //create configure and export the store from this code

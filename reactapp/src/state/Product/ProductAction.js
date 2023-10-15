@@ -3,7 +3,7 @@ import * as actionTypes from "../actionTypes";
 //product calls
 //Product Action and Server Call
 export const saveProduct = (product) => {
-    console.log("Product ", product);
+    // console.log("Product ", product);
 
     return function (dispatch) {
         //dispatch(loading(true));

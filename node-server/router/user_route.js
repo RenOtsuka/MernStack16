@@ -33,7 +33,7 @@ userRoute.post("/api/signinup", (req, res)=>{
 })
 
 
-userRoute.get("/api/getuser",(req, res)=>{
+userRoute.get("/api/getusers",(req, res)=>{
     userDataModel.find()
     .then((allusers)=>{
         res.send(allusers)

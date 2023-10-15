@@ -12,7 +12,13 @@ const productApp = express();
 const cartRoute = require("./router/cart_route")
 const cartApp = express();
 
-console.log("We are in server.js")
+const hobbyRoute = require("./router/hobby_route")
+const hobbyApp = express();
+
+const recentOrderRoute = require("./router/recentOrders_route");
+const orderApp = express();
+
+console.log("We are in index.js")
 
 app.use(cors());//middleware to expose api for other users as public
 //setting up the middleware static to handle all the static files we need to serve to client
@@ -30,8 +36,16 @@ userApp.use('/',userRoute)
 app.use('/product',productApp)
 productApp.use('/', productRoute)
 
-app.use('/cart',cartApp)
-cartApp.use('/', cartRoute)
+app.use('/cart',cartApp);
+cartApp.use('/', cartRoute);
+
+app.use('/hobby',hobbyApp);
+hobbyApp.use('/', hobbyRoute);
+
+app.use('/orders',orderApp);
+orderApp.use('/', hobbyRoute);
+
+
 
 //wild card operator / default api
 app.get('*',(req, res)=>{
