@@ -11,7 +11,7 @@ export default function CouponReducer(state = init_state, action) {
 
     case actionTypes.AddCouponToStore:
       //..state - products[] and defaultProduct
-      return { ...state, Coupon: action.payload }
+      return { ...state, Coupon: action.payload}
 
     default:
       return state;

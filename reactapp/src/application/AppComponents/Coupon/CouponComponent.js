@@ -22,26 +22,27 @@ let CouponPage = (props) => {
   let coupon = useSelector((state) => state.couponReducer.Coupon);
   let [couponState, setCouponState] = useState(coupon);
   let dispatchCoupon = useDispatch();
-  
+
 
   let genCoupon = () => {
     let val = (Math.random() * 1000000);
     setCouponState(Math.trunc(val));
-    dispatchCoupon(saveCouponToStore(val));
-  } 
-
-  let readCoupon = () => {
-    console.log(couponState);
+    dispatchCoupon(saveCouponToStore({value:Math.trunc(val)}));
   }
 
-  
+  let readCoupon = () => {
+    console.log(coupon);
+  }
+
+
 
   return (
     <>
-    <h3>Coupon Page</h3>
-    <br></br>
-     <button onClick={genCoupon}>Generate Coupon</button>
-     <button onClick={readCoupon}>Read Coupon</button>
+      <h3>Coupon Page</h3>
+      <br></br>
+      <p>Coupon Value: {coupon.value}</p>
+      <button onClick={genCoupon}>Generate Coupon</button>
+      {/* <button onClick={readCoupon}>Read Coupon</button> */}
     </>
   );
 }

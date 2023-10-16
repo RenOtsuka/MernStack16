@@ -4,7 +4,7 @@ const INITIAL_STATE = [] //instead of objet in array we are directly putting arr
 
 export default function CartReducer(state = INITIAL_STATE, action) 
 {
-    console.log("cart Reducer", state, action);
+    // console.log("cart Reducer", state, action);
     // additem, removeitem, updateitem, emptyitem
 
     switch(action.type) 

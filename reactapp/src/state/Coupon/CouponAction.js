@@ -9,6 +9,6 @@ export const addCoupon = (value) => {
 
 export const saveCouponToStore = (coupon) => {
   return(dispatch) => {
-    dispatch(addCoupon);
+    dispatch(addCoupon(coupon));
   }
 }
