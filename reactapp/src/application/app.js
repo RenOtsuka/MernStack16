@@ -17,6 +17,8 @@ import Cart from "./AppComponents/Cart/CartComponent"
 import Hobby from "./AppComponents/Hobby/HobbyComponent";
 import CheckOut from "./AppComponents/Checkout/CheckoutComponent";
 import CouponPage from "./AppComponents/Coupon/CouponComponent";
+import RecentOrders from "./AppComponents/RecentOrders/RecentOrdersComponent";
+import CancelledOrders from "./AppComponents/CancelledOrders/CancelledOrders";
 
 export default class Application extends Component {
         render(){
@@ -29,7 +31,7 @@ export default class Application extends Component {
                             <Route path="/home" element={<Home user={"User"} userName={"Boubacar"}/>}/>
                             <Route path="/product" element={<Product />} />
                             <Route path="/hook" element={<UserHook />} />
-                            <Route path="/hobbies" element={<Hobby />} />
+                            {/* <Route path="/hobbies" element={<Hobby />} /> */}
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/coupon" element={<CouponPage />} />
                             <Route path="/checkout" element={<CheckOut />} />
