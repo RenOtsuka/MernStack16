@@ -5,8 +5,8 @@ schemaObj = mongooseObj.Schema; //using the schema class from mongoose
 mongooseObj.connect("mongodb://127.0.0.1/mernstack16"); 
 
 let recentOrdersSchema = new schemaObj({
-    userid : {type: Number, required : true}, 
-    // order: {required : true},
+    userid : {type: String, required : true}, 
+    order: { Object, required : true},
     dateTime: {type: Date, retquired: true}
 }
 // ,{

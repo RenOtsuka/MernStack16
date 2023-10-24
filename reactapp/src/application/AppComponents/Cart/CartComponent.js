@@ -47,7 +47,7 @@ let CartComponent = (props) => {
     }
 
     let navigate = useNavigate();
-    
+
     let func = (evt) => {
         navigate('/checkout');
         evt.preventDefault();
